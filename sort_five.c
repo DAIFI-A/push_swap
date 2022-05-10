@@ -1,41 +1,86 @@
 #include "push_swap.h"
 
-int push_first_2_elements(t_stack **a, t_stack **b, int i)
+int smallest_num(t_stack *b)
 {
-    i = 2;
-    pa_b(a, b);
-    pa_b(a, b);
-    write(1, "pb\n", 3);
-	write(1, "pb\n", 3);
-	return (i);
-}
+    int     i;
+    int     index;
+    int     a;
 
-int smallest_num(t_stack *stack)
-{
-    int     min;
-
-    min = stack->num;
-    while (stack->next)
+    a = b->num;
+    i = 0;
+    index = 0;
+    while (b)
     {
-        if (stack->num < min)
-            min = stack->num;
-        stack = stack->next;
+        if (b->num < a)
+        {
+            a = b->num;
+            index = i;
+        }
+        b = b->next;
+        if (b == NULL)
+            break;
+        i++;
     }
-    if(stack->num < min)
-        min = stack->num;
-    return (min);
+    return (index);
 }
 
-int sort_five(t_stack **val , t_stack **val1, int i)
+void    sort_a_in_b(t_stack *a, int min)
+{
+    int     i;
+    int     j;
+
+    i = 0;
+    j = 0;
+    if (min < stack_len(a) - min)
+    {
+        while (i < min)
+        {
+            ra_b(a);
+            i++;
+        }
+    }
+    else
+    {
+        while (j < stack_len(a) - min)
+        {
+            rra_b(a);
+            j++;
+        }
+        
+    }
+    
+}
+
+void    push_back(t_stack *a, t_stack *b)
+{
+    int     i;
+
+    i = 1;
+    while (i < 4)
+    {
+        pa_b(a, b);
+        i++;
+    }
+}
+
+void    sort_five(t_stack *a , t_stack *b, int i)
 {
     int min;
+    int len;
 
-    
-    //first we need to push the top 2 elements to stack_b
-    i += push_first_2_elements(val, val1, i);
-    //then we deal with the rest by the three sort algo
-    i += sort_3(val);
-    min = smallest_num(val);
-    if ()
-    i += pa_b()
+    len = stack_len(a);
+    if (len > 3)
+    {
+        while (a->num)
+        {
+            min = smallest_num(a);
+            sort_a_in_b(a, min);
+            pa_b(b, a);
+            if (min == 3)
+                break;
+        }
+    }
+    if (min == 3)
+        sort_3(a);
+    push_back(a, b);
 }

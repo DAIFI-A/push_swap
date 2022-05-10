@@ -1,4 +1,4 @@
-#include<push_swap.h>
+#include"push_swap.h"
 
 t_stack *creat_node(void)
 {
@@ -40,12 +40,17 @@ int main(int argc, char **argv)
 	t_stack	*stack2;
     int     len;
 
+    stack2 = NULL;
     if (!(stack1 = stack_fillin(argc, argv)))
     {
         write(1, "error", 6);
         return 0;
     }
     len = stack_len(stack1);
+    if (len == 3)
+        sort_3(&stack1);
+    if (len == 5)
+        sort_five(stack1, stack2);
     stack2 = NULL;
     return 0;
 }

@@ -71,7 +71,7 @@ int pa_b(t_stack **reciver_head, t_stack **origin_head)
         to->next = NULL;
         *reciver_head = to;
     }
-    else 
+    else
     {
         tmp->next = to;
         *reciver_head = tmp;
@@ -79,21 +79,21 @@ int pa_b(t_stack **reciver_head, t_stack **origin_head)
     return (0);
 }
 
-int ss(t_stack *stack_a, t_stack *stack_b)
+int ss(t_stack **stack_a, t_stack **stack_b)
 {
     sa_b(stack_a);
     sa_b(stack_b);
     return(0);
 }
 
-int rr(t_stack *stack_a, t_stack *stack_b)
+int rr(t_stack **stack_a, t_stack **stack_b)
 {
     ra_b(stack_a);
     ra_b(stack_b);
     return(0);
 }
 
-int rrr(t_stack *stack_a, t_stack *stack_b)
+int rrr(t_stack **stack_a, t_stack **stack_b)
 {
     rra_b(stack_a);
     rra_b(stack_b);

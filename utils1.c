@@ -6,6 +6,7 @@ int stack_len(t_stack *stack)
     t_stack *tmp;
 
     tmp = stack;
+    len = 0;
     while(tmp)
     {
         tmp = tmp->next;
@@ -20,5 +21,6 @@ int swap(int *a, int *b)
 
     tmp = *a;
     *a = *b;
-    b = tmp;
+    b = &tmp;
+    return (0);
 }

@@ -76,6 +76,7 @@ int pa_b(t_stack **reciver_head, t_stack **origin_head)
         tmp->next = to;
         *reciver_head = tmp;
     }
+    *origin_head = from;
     return (0);
 }
 

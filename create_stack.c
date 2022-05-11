@@ -47,7 +47,14 @@ int main(int argc, char **argv)
         return 0;
     }
     len = stack_len(stack1);
-    if (len == 3)
+    if (len == 1)
+        return (0);
+    // else if (len == 2 && stack1->num > stack1->next)
+    // {
+    //     sa_b(&stack1);
+    //     write(1, "sa\n", 4);
+    // }
+    else if (len == 3)
         sort_3(&stack1);
     if (len == 5)
         sort_five(stack1, stack2);

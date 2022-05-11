@@ -18,6 +18,7 @@ int smallest_num(t_stack *b)
 
 void	sort_4(t_stack *a, t_stack *b)
 {
+<<<<<<< HEAD
 	int		min;
 
 	min = smallest_num(a);
@@ -46,10 +47,39 @@ void	sort_4(t_stack *a, t_stack *b)
 }
 
 void    sort_five(t_stack *a , t_stack *b)
+=======
+	int	min;
+
+	min = smallest_num(a);
+	if (a->num == min)
+		pa_b(&b, &a);
+	else if (a->next->num == min)
+	{
+		sa_b(&a);
+		pb(&b, &a);
+	}
+	else if (args->stack_a->next->next->content == min)
+	{
+		rra_b(&a);
+		rra_b(&a);
+		pa_b(&b, &a);
+	}
+	else if (args->stack_a->next->next->next->content == min)
+	{
+		rra_b(&a);
+		pa_b(&b, &a);
+	}
+	sort_3(args);
+	pa(&a, &b);
+}
+
+void    sort_five(t_stack *a , t_stack *b, int i)
+>>>>>>> 62fed94af6da746070f2d1527626d95546bca504
 {
 	int min;
 	int len;
 
+<<<<<<< HEAD
 	len = stack_len(a);
 	min = smallest_num(a);
 	printf("%d\n", a->next->next->next->num);
@@ -91,4 +121,28 @@ void    sort_five(t_stack *a , t_stack *b)
 	sort_4(a,b);
 	printf("oy");
 	pa_and_write(&a, &b);
+=======
+
+    len = stack_len(a);
+    middle = len / 2 + 1;
+	min = smallest_num(a);
+	while (i < 5)
+	{
+		if (a->content == min)
+		{
+			pa_b(&b, &a);
+			break ;
+		}
+		else
+		{
+			if (i <= middle)
+				ra_b(&a);
+			else if (i > middle)
+				rra_b(&a);
+		}
+		i++;
+	}
+	sort_4(a);
+	pa_b(&a, &b);
+>>>>>>> 62fed94af6da746070f2d1527626d95546bca504
 }

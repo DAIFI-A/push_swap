@@ -52,32 +52,23 @@ int rra_b(t_stack **head)
     return (0);
 }
 
-int pa_b(t_stack **reciver_head, t_stack **origin_head)
+void	pa_b(t_list **stack_a, t_list **stack_b)
 {
-    t_stack *tmp;
-    t_stack *to;
-    t_stack *from;
+	t_list	*back1;
+	t_list	*back2;
 
-    to = *reciver_head;
-    from = *origin_head;
-    if (!from)
-        return 0;
-    tmp = from;
-    from = from->next;
-    *origin_head = from;
-    if (!to)
-    {
-        to = tmp;
-        to->next = NULL;
-        *reciver_head = to;
-    }
-    else
-    {
-        tmp->next = to;
-        *reciver_head = tmp;
-    }
-    *origin_head = from;
-    return (0);
+	if (*stack_a == NULL)
+		exit(1);
+	back1 = (*stack_a)->next;
+	back2 = *stack_b;
+	if (*stack_b == NULL)
+	{
+		*stack_b = *stack_a;
+		(*stack_b)->next = NULL;
+	}
+	else
+		ft_lstadd_front(stack_b, *stack_a);
+	*stack_a = back1;
 }
 
 int ss(t_stack **stack_a, t_stack **stack_b)

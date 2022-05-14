@@ -14,82 +14,70 @@
 
 void	sort_big_stack(t_stack *a, t_stack *b)
 {
-	int		i;
-	int		j;
+	int	i;
+	int	j;
 
 	i = 1;
 	j = 0;
 	if (stack_len(a) > 5 && stack_len(a) <= 250)
 		j = 15;
-	if (stack_len(a) > 250)
+	else if (stack_len(a) > 250)
 		j = 25;
 	index_stack(a);
+	range(a, b, i, j);
+}
+
+void	range(t_stack *a, t_stack *b, int i, int j)
+{
 	while (stack_len(a) != 0)
 	{
-		if (a->index <= i + j)
+		if (a->index <= i && stack_len(b) > 1)
 		{
-			pb_and_write(&b, &a);
-			i++;
-		}
-		else if (a->index <= i && stack_len(b) > 1)
-		{
-			pb_and_write(&b, &a);
+			pb(&b, &a);
 			rb(&b);
 			i++;
 		}
+		else if (a->index <= i + j)
+		{
+			pb(&b, &a);
+			i++;
+		}
 		else
-			sort_3_ra(&a);
+			ra(&a);
 		if (stack_len(b) > 1)
 		{
 			if (b->index < b->next->index)
-				rb(&b);
+				sort_3_sa(&b);
 		}
 	}
-	sorting(a, b);
+	sort(a, b);
 }
 
-int	max_index_b(t_stack *a, int max)
+void	sort(t_stack *a, t_stack *b)
 {
-	int		i;
-	t_stack	*backup;
-
-	i = 0;
-	backup = a;
-	while (backup)
-	{
-		if (backup->index == max)
-			break;
-		i++;
-		backup = backup->next;
-	}
-	return(i);
-}
-
-void	sorting(t_stack *a, t_stack *b)
-{
-	int		middle;
-	int		i;
-	int		max;
+	int	middle;
+	int	max;
+	int	i;
 
 	max = stack_len(b) - 1;
-	while (b)
+	i = 0;
+	while (stack_len(b) != 0)
 	{
-		i = max_index_b(b, max);
+		i = find_max_index(args->stack_b, max);
 		while (max > -1)
 		{
-			middle = stack_len(b) / 2;
+			middle = (max + 1) / 2;
 			if (b->index == max)
-				break;
+				break ;
 			else if (b->index != max)
 			{
-				if (i > middle)
-					rrb(&b);
-				else if (i <= middle)
+				if (i <= middle)
 					rb(&b);
+				else if (i > middle)
+					rrb(&b)	;
 			}
 		}
-		pa_and_write(&a, &b);
+		pa(&a, &b);
 		max--;
-		middle--;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 23:01:38 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/13 17:33:45 by adaifi           ###   ########.fr       */
+/*   Updated: 2022/05/16 17:52:20 by adaifi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,6 @@ int	main(int argc, char **argv)
 
 	stack2 = NULL;
 	stack1 = stack_fillin(argc, argv);
-	if (!(stack1))
-	{
-		write(1, "error", 6);
-		return (0);
-	}
 	len = stack_len(stack1);
 	if (len == 1)
 		return (0);
@@ -72,6 +67,7 @@ int	main(int argc, char **argv)
 		sort_five(stack1, stack2);
 	else if (len > 5)
 		sort_big_stack(stack1, stack2);
+	free_stack(stack1);
 	stack2 = NULL;
 	return (0);
 }

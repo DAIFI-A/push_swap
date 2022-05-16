@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 17:33:58 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/13 23:37:27 by adaifi           ###   ########.fr       */
+/*   Updated: 2022/05/16 14:31:31 by adaifi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,36 +24,53 @@ void	sort_big_stack(t_stack *a, t_stack *b)
 	else if (stack_len(a) > 250)
 		j = 25;
 	index_stack(a);
-	range(a, b, i, j);
+	pb_andsort(a, b, i, j);
 }
 
-void	range(t_stack *a, t_stack *b, int i, int j)
+void	pb_andsort(t_stack *a, t_stack *b, int i, int j)
 {
-	while (stack_len(a) != 0)
+	while (a != NULL)
 	{
-		if (a->index <= i && stack_len(b) > 1)
-		{
-			pb(&b, &a);
-			rb(&b);
-			i++;
-		}
-		else if (a->index <= i + j)
-		{
-			pb(&b, &a);
-			i++;
-		}
-		else
-			ra(&a);
 		if (stack_len(b) > 1)
 		{
 			if (b->index < b->next->index)
-				sort_3_sa(&b);
+				rb(&b);
 		}
+		if (a->index <= i + j)
+		{
+			pb_and_write(&b, &a);
+			i++;
+		}
+		else if (a->index <= i && stack_len(b) > 1)
+		{
+			pb_and_write(&b, &a);
+			rb(&b);
+			i++;
+		}
+		else
+			sort_3_ra(&a);
 	}
-	sort(a, b);
+	sorting(a, b);
 }
 
-void	sort(t_stack *a, t_stack *b)
+int	max_index_b(t_stack *a, int max)
+{
+	int		i;
+	t_stack	*backup;
+
+	i = 0;
+	backup = a;
+	while (backup)
+	{
+		if (backup->index == max)
+			break;
+		i++;
+		backup = backup->next;
+	}
+	return(i);
+}
+
+void	sorting(t_stack *a, t_stack *b)
 {
 	int	middle;
 	int	max;
@@ -61,10 +78,9 @@ void	sort(t_stack *a, t_stack *b)
 
 	max = stack_len(b) - 1;
 	i = 0;
-	while (stack_len(b) != 0)
+	while (b != NULL)
 	{
-		i = find_max_index(args->stack_b, max);
-		while (max > -1)
+		while (max >= 0)
 		{
 			middle = (max + 1) / 2;
 			if (b->index == max)
@@ -77,7 +93,7 @@ void	sort(t_stack *a, t_stack *b)
 					rrb(&b)	;
 			}
 		}
-		pa(&a, &b);
+		pa_and_write(&a, &b);
 		max--;
 	}
 }

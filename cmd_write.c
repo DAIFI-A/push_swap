@@ -40,8 +40,8 @@ void	pb_and_write(t_stack **a, t_stack **b)
 	write(1, "pb\n", 3);
 }
 
-void	rrb(t_stack **a)
+void	rrb(t_stack **b)
 {
-	rra_b(a);
+	rra_b(b);
 	write(1, "rrb\n", 4);
 }

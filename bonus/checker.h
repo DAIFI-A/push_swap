@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adaifi <adaifi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 16:32:14 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/16 17:42:34 by adaifi           ###   ########.fr       */
+/*   Updated: 2022/05/18 17:07:08 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,12 @@ void	ra_b_bonus(t_stack **head);
 void	rra_b_bonus(t_stack **head);
 void	pa_b_bonus(t_stack **reciver_head, t_stack **origin_head);
 int		swap(int *a, int *b);
+void	ss_bonus(t_stack **stack_a, t_stack **stack_b);
+void	rr_bonus(t_stack **stack_a, t_stack **stack_b);
+void	rrr_bonus(t_stack **stack_a, t_stack **stack_b);
 void	ft_lstadd_front(t_stack **lst, t_stack *new);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*get_next_line(int fd);
 
 #endif
+

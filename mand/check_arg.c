@@ -3,35 +3,54 @@
 /*                                                        :::      ::::::::   */
 /*   check_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adaifi <adaifi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 17:29:52 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/16 15:12:58 by adaifi           ###   ########.fr       */
+/*   Updated: 2022/05/19 00:02:33 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		isdupl(char **a)
+int	isdupl(t_stack *a)
 {
-	char	**tmp;
-	int		i;
-	int		j;
-	int		k;
+	t_stack	*tmp;
 
-	tmp = a;
-	i = 0;
-	k = 0;
-	j = 0;
-	while(a != NULL)
+	while (a->next)
 	{
-		while(tmp)
+		tmp = a;
+		while (tmp->next)
 		{
-			if(tmp[i] == a[j])
-				return (0);
-			i++;
+			if (a->num == tmp->next->num)
+			{
+				free_stack(a);
+				return 0;
+			}
+			tmp = tmp->next;
 		}
-		j++;
+		a = a->next;
+	}
+	return (1);
+}
+
+int	is_digit(char	**av)
+{
+	int		j;
+	int		i;
+
+	i = 0;
+	while (av[i])
+	{
+		j = 1;
+		if (((av[i][0] != '-' && av[i][0] != '+') || (av[i][1] == '\0')) && (ft_isdigit(av[i][0]) != 0))
+			return (0);
+		while (av[i][j])
+		{
+			if (ft_isdigit(av[i][j]) != 0)
+				return (0);
+			j++;
+		}
+		i++;
 	}
 	return (1);
 }
@@ -47,7 +66,7 @@ void	free_stack(t_stack *a)
 		free(a);
 		a = tmp;
 	}
-	free(a);
+	free(a->next);
 }
 
 void	free_arg(char **argv)
@@ -63,16 +82,24 @@ void	free_arg(char **argv)
 	free(argv[i]);
 }
 
-void	ckeck_stack(t_stack *a, char **argv)
+int	is_sorted(t_stack *a)
 {
-	if (!(a))
+	while (a->next != NULL)
+	{
+		if (a->num < a->next->num)
+			return (1);
+		a = a->next;
+	}
+	return (0);
+}
+
+void	ckeck_stack(t_stack *a, char **av)
+{
+	if ((!a) || (isdupl(a) == 0) || (is_digit(av)) == 0)
 	{
 		write(1, "error", 6);
 		exit (1);
 	}
-	if (a->num != ft_atoi(argv[0]))
-	{
-		write(2, "error", 6);
+	if (is_sorted(a) == 1)
 		exit(1);
-	}
 }

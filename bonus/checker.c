@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 16:31:43 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/17 20:25:12 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/05/18 17:04:28 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ t_stack	*stack_fillin(int argc, char **argv)
 	}
 	return (head);
 }
-
 
 void	stack_vald(t_stack *a, char **argv)
 {
@@ -96,6 +95,12 @@ void	instructions_read(t_stack *a, t_stack *b, char *line)
 		ra_b_bonus(&b);
 	if (ft_strncmp(line, "ra\n", 3) == 0)
 		ra_b_bonus(&a);
+	if (ft_strncmp(line, "ss\n", 3) == 0)
+		ss_bonus(&a, &b);
+	if (ft_strncmp(line, "rr\n", 3) == 0)
+		rr_bonus(&a, &b);
+	if (ft_strncmp(line, "rrr\n", 4) == 0)
+		rrr_bonus(&a, &b);
 }
 
 int	main(int ac, char **argv)

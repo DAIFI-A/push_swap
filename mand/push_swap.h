@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adaifi <adaifi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 23:04:55 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/16 16:40:45 by adaifi           ###   ########.fr       */
+/*   Updated: 2022/05/18 23:59:00 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 # include<stdlib.h>
 # include<unistd.h>
-# include"libft/libft.h"
+# include"../libft/libft.h"
 
 typedef struct stack
 {
@@ -27,7 +27,8 @@ typedef struct stack
 void	sa_b(t_stack **head);
 void	sb(t_stack **b);
 void	pb_andsort(t_stack *a, t_stack *b, int i, int j);
-void	ckeck_stack(t_stack *a, char **argv);
+void	ckeck_stack(t_stack *a, char **av);
+int		is_digit(char	**av);
 void	rrb(t_stack **b);
 void	ra_b(t_stack **head);
 void	rra_b(t_stack **head);
@@ -54,7 +55,7 @@ void	rb(t_stack **b);
 void	free_arg(char **argv);
 void	sort_five(t_stack *a, t_stack *b);
 void	sort_big_stack(t_stack *a, t_stack *b);
-int		isdupl(char **a);
+int		isdupl(t_stack *a);
 int		stack_len(t_stack *stack);
 int		swap(int *a, int *b);
 int		smallest_num(t_stack *stack);

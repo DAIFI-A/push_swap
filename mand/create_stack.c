@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adaifi <adaifi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 23:01:38 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/16 17:52:20 by adaifi           ###   ########.fr       */
+/*   Updated: 2022/05/18 23:59:05 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int	main(int argc, char **argv)
 
 	stack2 = NULL;
 	stack1 = stack_fillin(argc, argv);
+	ckeck_stack(stack1, argv);
 	len = stack_len(stack1);
 	if (len == 1)
 		return (0);

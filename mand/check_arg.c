@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 17:29:52 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/20 15:14:55 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/05/20 20:43:10 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ckeck_stack(int ac, char **av, t_stack *a)
 
 	tab = parse(ac, av);
 	str = ft_split(tab, ' ');
-	if (isdupl(a) == 0 || !(is_digit(str)))
+	if ((isdupl(a) == 0) || (is_digit(str)) == 0)
 	{
 		write(2, "Error\n", 7);
 		free_stack(a);

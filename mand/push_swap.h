@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 23:04:55 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/20 15:04:18 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/05/20 20:23:30 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	sb(t_stack **b);
 void	pb_andsort(t_stack *a, t_stack *b, int i, int j);
 void	ckeck_stack(int ac, char **av, t_stack *a);
 int		is_digit(char	**av);
+int		is_sorted(t_stack *a);
 void	rrb(t_stack **b);
 void	ra_b(t_stack **head);
 void	rra_b(t_stack **head);

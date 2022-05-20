@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 17:33:58 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/20 17:23:57 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/05/20 21:39:08 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	pb_andsort(t_stack *a, t_stack *b, int i, int j)
 		}
 		else
 			sort_3_ra(&a);
-		if(stack_len(b) > 1)
+		if (stack_len(b) > 1)
 		{
 			if(b->next->index > b->index)
 				sb(&b);
@@ -76,8 +76,8 @@ void	sorting(t_stack *a, t_stack *b)
 	int	max;
 	int	i;
 
-	max = stack_len(b) - 1;
 	i = 0;
+	max = stack_len(b) - 1;
 	while (stack_len(b) != 0)
 	{
 		i = max_index_b(b, max);

@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 16:32:14 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/18 17:07:08 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/05/20 15:41:07 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <stdio.h>
-# define BUFFER_SIZE 1
+# include"../libft/libft.h"
 
 typedef struct stack
 {
@@ -44,7 +44,6 @@ void	rr_bonus(t_stack **stack_a, t_stack **stack_b);
 void	rrr_bonus(t_stack **stack_a, t_stack **stack_b);
 void	ft_lstadd_front(t_stack **lst, t_stack *new);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-char	*get_next_line(int fd);
 
 #endif
 

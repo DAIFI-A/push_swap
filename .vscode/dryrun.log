@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/adaifi/Desktop/push_swap'
+make: Leaving directory `/Users/adaifi/Desktop/push_swap'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+

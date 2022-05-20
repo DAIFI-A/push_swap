@@ -6,11 +6,12 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 16:31:43 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/18 17:04:28 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/05/20 15:38:39 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+
 t_stack	*creat_node(void)
 {
 	t_stack	*head;

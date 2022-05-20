@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 17:29:52 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/19 00:02:33 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/05/20 15:14:55 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ int	isdupl(t_stack *a)
 		while (tmp->next)
 		{
 			if (a->num == tmp->next->num)
-			{
-				free_stack(a);
-				return 0;
-			}
+				return (0);
 			tmp = tmp->next;
 		}
 		a = a->next;
@@ -42,11 +39,9 @@ int	is_digit(char	**av)
 	while (av[i])
 	{
 		j = 1;
-		if (((av[i][0] != '-' && av[i][0] != '+') || (av[i][1] == '\0')) && (ft_isdigit(av[i][0]) != 0))
-			return (0);
 		while (av[i][j])
 		{
-			if (ft_isdigit(av[i][j]) != 0)
+			if (ft_isdigit(av[i][j]) == 0)
 				return (0);
 			j++;
 		}
@@ -55,51 +50,33 @@ int	is_digit(char	**av)
 	return (1);
 }
 
-void	free_stack(t_stack *a)
-{
-	t_stack	*tmp;
-
-	tmp = a;
-	while (a->next != NULL)
-	{
-		tmp = a->next;
-		free(a);
-		a = tmp;
-	}
-	free(a->next);
-}
-
-void	free_arg(char **argv)
-{
-	int		i;
-
-	i = 0;
-	while (argv[i])
-	{
-		free(argv[i]);
-		i++;
-	}
-	free(argv[i]);
-}
-
 int	is_sorted(t_stack *a)
 {
 	while (a->next != NULL)
 	{
-		if (a->num < a->next->num)
-			return (1);
+		if (a->num > a->next->num)
+			return (0);
 		a = a->next;
 	}
-	return (0);
+	return (1);
 }
 
-void	ckeck_stack(t_stack *a, char **av)
+void	ckeck_stack(int ac, char **av, t_stack *a)
 {
-	if ((!a) || (isdupl(a) == 0) || (is_digit(av)) == 0)
+	char	*tab;
+	char	**str;
+
+	tab = parse(ac, av);
+	str = ft_split(tab, ' ');
+	if (isdupl(a) == 0 || !(is_digit(str)))
 	{
-		write(1, "error", 6);
+		write(2, "Error\n", 7);
+		free_stack(a);
 		exit (1);
 	}
-	if (is_sorted(a) == 1)
+	if (is_sorted(a) == 1 || (!a))
+	{
+		free_stack(a);
 		exit(1);
+	}
 }

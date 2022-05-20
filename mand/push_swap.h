@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 23:04:55 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/18 23:59:00 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/05/20 15:04:18 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct stack
 void	sa_b(t_stack **head);
 void	sb(t_stack **b);
 void	pb_andsort(t_stack *a, t_stack *b, int i, int j);
-void	ckeck_stack(t_stack *a, char **av);
+void	ckeck_stack(int ac, char **av, t_stack *a);
 int		is_digit(char	**av);
 void	rrb(t_stack **b);
 void	ra_b(t_stack **head);
@@ -55,11 +55,13 @@ void	rb(t_stack **b);
 void	free_arg(char **argv);
 void	sort_five(t_stack *a, t_stack *b);
 void	sort_big_stack(t_stack *a, t_stack *b);
+char	*ft_strjoin_custom(char const *s1, char const *s2);
 int		isdupl(t_stack *a);
 int		stack_len(t_stack *stack);
 int		swap(int *a, int *b);
 int		smallest_num(t_stack *stack);
 int		max_index_b(t_stack *a, int max);
+char	*parse(int ac, char**av);
 t_stack	*creat_node(void);
 t_stack	*stack_fillin(int argc, char **argv);
 #endif

@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 23:01:38 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/18 23:59:05 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/05/20 15:11:27 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,11 @@ int	main(int argc, char **argv)
 
 	stack2 = NULL;
 	stack1 = stack_fillin(argc, argv);
-	ckeck_stack(stack1, argv);
 	len = stack_len(stack1);
 	if (len == 1)
-		return (0);
-	else if (len == 2 && stack1->num > stack1->next->num)
+		exit(1);
+	ckeck_stack(argc, argv, stack1);
+	if (len == 2 && stack1->num > stack1->next->num)
 		sort_3_sa(&stack1);
 	else if (len == 3)
 		sort_3(&stack1);

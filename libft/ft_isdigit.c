@@ -6,13 +6,11 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 12:54:36 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/18 22:57:26 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/05/19 23:19:03 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int a)
 {
-	if (a >= '0' && a <= '9')
-		return (1);
-	return (0);
+	return (a >= '0' && a <= '9');
 }

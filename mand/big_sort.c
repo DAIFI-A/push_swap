@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   big_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adaifi <adaifi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 17:33:58 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/16 14:31:31 by adaifi           ###   ########.fr       */
+/*   Updated: 2022/05/20 17:23:57 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include"push_swap.h"
+#include"push_swap.h"
 
 void	sort_big_stack(t_stack *a, t_stack *b)
 {
@@ -29,26 +29,26 @@ void	sort_big_stack(t_stack *a, t_stack *b)
 
 void	pb_andsort(t_stack *a, t_stack *b, int i, int j)
 {
-	while (a != NULL)
+	while (stack_len(a) != 0)
 	{
-		if (stack_len(b) > 1)
+		if(a->index <= i && stack_len(b) > 1)
 		{
-			if (b->index < b->next->index)
+				pb_and_write(&b, &a);
 				rb(&b);
+				i++;
 		}
-		if (a->index <= i + j)
+		else if(a->index <= i + j)
 		{
-			pb_and_write(&b, &a);
-			i++;
-		}
-		else if (a->index <= i && stack_len(b) > 1)
-		{
-			pb_and_write(&b, &a);
-			rb(&b);
-			i++;
+				pb_and_write(&b, &a);
+				i++;
 		}
 		else
 			sort_3_ra(&a);
+		if(stack_len(b) > 1)
+		{
+			if(b->next->index > b->index)
+				sb(&b);
+		}
 	}
 	sorting(a, b);
 }
@@ -63,11 +63,11 @@ int	max_index_b(t_stack *a, int max)
 	while (backup)
 	{
 		if (backup->index == max)
-			break;
+			break ;
 		i++;
 		backup = backup->next;
 	}
-	return(i);
+	return (i);
 }
 
 void	sorting(t_stack *a, t_stack *b)
@@ -78,8 +78,9 @@ void	sorting(t_stack *a, t_stack *b)
 
 	max = stack_len(b) - 1;
 	i = 0;
-	while (b != NULL)
+	while (stack_len(b) != 0)
 	{
+		i = max_index_b(b, max);
 		while (max >= 0)
 		{
 			middle = (max + 1) / 2;
@@ -90,7 +91,7 @@ void	sorting(t_stack *a, t_stack *b)
 				if (i <= middle)
 					rb(&b);
 				else if (i > middle)
-					rrb(&b)	;
+					rrb(&b);
 			}
 		}
 		pa_and_write(&a, &b);

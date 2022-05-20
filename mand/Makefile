@@ -1,5 +1,5 @@
-CFILES = sort_five.c create_stack.c cmd.c utils1.c cmd_write.c cmd1_write.c cmd1.c big_sort.c check_arg.c
-OFILES = sort_five.o create_stack.o cmd.o utils1.o cmd_write.o cmd1_write.o cmd1.o big_sort.o check_arg.o
+CFILES = sort_five.c create_stack.c cmd.c utils1.c cmd_write.c cmd1_write.c cmd1.c big_sort.c check_arg.c utils2.c
+OFILES = sort_five.o create_stack.o cmd.o utils1.o cmd_write.o cmd1_write.o cmd1.o big_sort.o check_arg.o utils2.o
 CC = cc
 INC = push_swap.h
 LIB = ../libft/libft.a

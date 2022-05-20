@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adaifi <adaifi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 00:45:37 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/13 23:22:40 by adaifi           ###   ########.fr       */
+/*   Updated: 2022/05/20 17:21:43 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,13 @@ void	index_stack(t_stack *a)
 	int		i;
 
 	backup1 = a;
-	while(backup1 != NULL)
+	while (backup1 != NULL)
 	{
 		i = 0;
 		backup2 = a;
-		while(backup2)
+		while (backup2)
 		{
-			if(backup1->num > backup2->num)
+			if (backup1->num > backup2->num)
 				i++;
 			backup2 = backup2->next;
 		}

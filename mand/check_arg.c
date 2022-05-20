@@ -33,6 +33,40 @@ int	isdupl(t_stack *a)
 	return (1);
 }
 
+char	*join_str(int ac, char**av)
+{
+	char	*str;
+	int		j;
+
+	j = 2;
+	ac--;
+	str = ft_strjoin(av[1], " ");
+	while (ac--)
+	{
+		str = ft_strjoin(str, av[j]);
+		if (ac == 1)
+		{
+			str = ft_strjoin(str, "\0");
+			break ;
+		}
+		str = ft_strjoin(str, " ");
+		j++;
+	}
+	return (str);
+}
+
+char	parse(int ac, char **av,t_stack *a)
+{
+	char	*str;
+	char	**str1;
+	int		i;
+
+	i = 0;
+	str = join_str(ac, av);
+	str1 = ft_split(str, ' ');
+	return (str1);
+}
+
 int	is_digit(char	**av)
 {
 	int		j;
@@ -93,9 +127,12 @@ int	is_sorted(t_stack *a)
 	return (0);
 }
 
-void	ckeck_stack(t_stack *a, char **av)
+void	ckeck_stack(int ac, char **av, t_stack *a)
 {
-	if ((!a) || (isdupl(a) == 0) || (is_digit(av)) == 0)
+	char	**tab;
+	
+	tab = parse(ac, av, a); 
+	if ((!a) || (isdupl(a) == 0) || (is_digit(tab)) == 0)
 	{
 		write(1, "error", 6);
 		exit (1);

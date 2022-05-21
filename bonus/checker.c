@@ -6,53 +6,11 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 16:31:43 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/20 15:38:39 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/05/21 22:06:40 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-
-t_stack	*creat_node(void)
-{
-	t_stack	*head;
-
-	head = (t_stack *)malloc(sizeof(t_stack));
-	head->deff = 1;
-	head->num = 0;
-	head->next = NULL;
-	return (head);
-}
-
-t_stack	*stack_fillin(int argc, char **argv)
-{
-	int		i;
-	t_stack	*head;
-	t_stack	*tmp;
-
-	i = 1;
-	head = creat_node();
-	tmp = head;
-	while (i < argc)
-	{
-		tmp->num = ft_atoi(argv[i]);
-		if (i < argc - 1)
-		{
-			tmp->next = creat_node();
-			tmp = tmp->next;
-			tmp->deff = 1;
-		}
-		i++;
-	}
-	return (head);
-}
-
-void	stack_vald(t_stack *a, char **argv)
-{
-	if (a->num != ft_atoi(argv[0]))
-		write(2, "error", 6);
-	if (!a)
-		exit(1);
-}
 
 void	check(t_stack *a, t_stack *b)
 {
@@ -65,17 +23,6 @@ void	check(t_stack *a, t_stack *b)
 	line[4] = '\0';
 	while (read(0, line, 4) != 0)
 		instructions_read(a, b, line);
-}
-
-int	is_sorted(t_stack *a)
-{
-	while (a->next != NULL)
-	{
-		if (a->num < a->next->num)
-			return (1);
-		a = a->next;
-	}
-	return (0);
 }
 
 void	instructions_read(t_stack *a, t_stack *b, char *line)
@@ -104,19 +51,43 @@ void	instructions_read(t_stack *a, t_stack *b, char *line)
 		rrr_bonus(&a, &b);
 }
 
+void	stack_vald(int ac, t_stack *a, char **argv)
+{
+	char	*tab;
+	char	**str;
+
+	tab = parse(ac, argv);
+	str = ft_split(tab, ' ');
+	if ((isdupl(a) == 0) || !(is_digit(str)))
+	{
+		write(2, "Error\n", 7);
+		free_stack(a);
+		exit(1);
+	}
+}
+
 int	main(int ac, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
 
 	b = NULL;
+	if (ac == 1)
+		exit(0);
+	if (ac == 2)
+	{
+		check(a, b);
+		write(1, "OK\n", 4);
+		exit(0);
+	}
 	a = stack_fillin(ac, argv);
+	stack_vald(ac, a, argv);
 	check(a, b);
-	if (is_sorted(a) == 1 && b == NULL)
-		write(1, "ok\n", 4);
-	else if (is_sorted(a) != 1 && b == NULL)
-		write(1, "ko\n", 4);
-	else if (is_sorted(a) != 1 || (is_sorted(a) != 1 && b != NULL))
-		write(2, "ko\n", 4);
+	if ((is_sorted(a) == 1 && b == NULL))
+		write(1, "OK\n", 4);
+	else if (is_sorted(a) == 0 && b == NULL)
+		write(1, "KO\n", 4);
+	free_stack(a);
+	b = NULL;
 	return (0);
 }

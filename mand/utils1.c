@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 00:45:37 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/20 17:21:43 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/05/21 02:14:43 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,13 @@ void	ft_lstadd_front(t_stack **lst, t_stack *new)
 	*lst = new;
 }
 
-int	swap(int *a, int *b)
+void	swap(int *a, int *b)
 {
 	int		tmp;
 
 	tmp = *a;
 	*a = *b;
 	b = &tmp;
-	return (0);
 }
 
 void	index_stack(t_stack *a)

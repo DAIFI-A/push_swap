@@ -1,34 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_arg.c                                        :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/15 17:29:52 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/22 00:01:25 by adaifi           ###   ########lyon.fr   */
+/*   Created: 2022/05/21 21:29:31 by adaifi            #+#    #+#             */
+/*   Updated: 2022/05/21 22:04:09 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	isdupl(t_stack *a)
-{
-	t_stack	*tmp;
-
-	while (a->next)
-	{
-		tmp = a;
-		while (tmp->next)
-		{
-			if (a->num == tmp->next->num)
-				return (0);
-			tmp = tmp->next;
-		}
-		a = a->next;
-	}
-	return (1);
-}
+#include "checker.h"
 
 int	is_digit(char	**av)
 {
@@ -61,22 +43,18 @@ int	is_sorted(t_stack *a)
 	return (1);
 }
 
-void	ckeck_stack(int ac, char **av, t_stack *a)
+int	swap(int *a, int *b)
 {
-	char	*tab;
-	char	**str;
+	int		tmp;
 
-	tab = parse(ac, av);
-	str = ft_split(tab, ' ');
-	if ((isdupl(a) == 0) || !(is_digit(str)))
-	{
-		write(2, "Error\n", 7);
-		free_stack(a);
-		exit(1);
-	}
-	if (is_sorted(a) == 1)
-	{
-		free_stack(a);
-		exit(0);
-	}
+	tmp = *a;
+	*a = *b;
+	b = &tmp;
+	return (0);
+}
+
+void	ft_lstadd_front(t_stack **lst, t_stack *new)
+{
+	new->next = *lst;
+	*lst = new;
 }

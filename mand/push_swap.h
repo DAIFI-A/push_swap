@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 23:04:55 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/20 20:23:30 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/05/21 23:25:01 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@
 
 typedef struct stack
 {
-	int		num;
-	int		deff;
-	int		index;
+	int				num;
+	int				index;
 	struct stack	*next;
 }	t_stack;
 
@@ -59,7 +58,7 @@ void	sort_big_stack(t_stack *a, t_stack *b);
 char	*ft_strjoin_custom(char const *s1, char const *s2);
 int		isdupl(t_stack *a);
 int		stack_len(t_stack *stack);
-int		swap(int *a, int *b);
+void	swap(int *a, int *b);
 int		smallest_num(t_stack *stack);
 int		max_index_b(t_stack *a, int max);
 char	*parse(int ac, char**av);

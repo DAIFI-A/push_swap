@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   moves1_bonus.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/21 21:35:12 by adaifi            #+#    #+#             */
+/*   Updated: 2022/05/21 21:35:13 by adaifi           ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker.h"
 
 void	sa_b_bonus(t_stack **head)
@@ -67,20 +79,4 @@ void	pa_b_bonus(t_stack **reciver_head, t_stack **origin_head)
 	else
 		ft_lstadd_front(reciver_head, *origin_head);
 	*origin_head = from;
-}
-
-int	swap(int *a, int *b)
-{
-	int		tmp;
-
-	tmp = *a;
-	*a = *b;
-	b = &tmp;
-	return (0);
-}
-
-void	ft_lstadd_front(t_stack **lst, t_stack *new)
-{
-	new->next = *lst;
-	*lst = new;
 }

@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 17:33:58 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/20 21:39:08 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/05/21 17:21:27 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,23 @@ void	pb_andsort(t_stack *a, t_stack *b, int i, int j)
 {
 	while (stack_len(a) != 0)
 	{
-		if(a->index <= i && stack_len(b) > 1)
+		if (a->index <= i && stack_len(b) > 1)
 		{
-				pb_and_write(&b, &a);
-				rb(&b);
-				i++;
+			pb_and_write(&b, &a);
+			rb(&b);
+			i++;
 		}
-		else if(a->index <= i + j)
+		else if (a->index <= i + j)
 		{
-				pb_and_write(&b, &a);
-				i++;
+			pb_and_write(&b, &a);
+			i++;
 		}
 		else
 			sort_3_ra(&a);
-		if (stack_len(b) > 1)
+		if (stack_len(b) == 2)
 		{
-			if(b->next->index > b->index)
-				sb(&b);
+			if (b->next->index > b->index)
+				rb(&b);
 		}
 	}
 	sorting(a, b);
@@ -76,12 +76,11 @@ void	sorting(t_stack *a, t_stack *b)
 	int	max;
 	int	i;
 
-	i = 0;
 	max = stack_len(b) - 1;
 	while (stack_len(b) != 0)
 	{
 		i = max_index_b(b, max);
-		while (max >= 0)
+		while (max > -1)
 		{
 			middle = (max + 1) / 2;
 			if (b->index == max)

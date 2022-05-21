@@ -57,4 +57,5 @@ void	rra_b(t_stack **head)
 	}
 	previous->next = NULL;
 	*head = last;
+	(*head)->next = stack;
 }

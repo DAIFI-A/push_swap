@@ -1,16 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils2.c                                           :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 14:58:55 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/21 17:31:29 by adaifi           ###   ########lyon.fr   */
+/*   Created: 2022/05/21 21:22:03 by adaifi            #+#    #+#             */
+/*   Updated: 2022/05/21 21:26:47 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
+
+int	isdupl(t_stack *a)
+{
+	t_stack	*tmp;
+
+	while (a->next)
+	{
+		tmp = a;
+		while (tmp->next)
+		{
+			if (a->num == tmp->next->num)
+				return (0);
+			tmp = tmp->next;
+		}
+		a = a->next;
+	}
+	return (1);
+}
 
 char	*parse(int ac, char**av)
 {
@@ -34,33 +52,6 @@ char	*parse(int ac, char**av)
 	return (str);
 }
 
-void	free_stack(t_stack *a)
-{
-	t_stack	*tmp;
-
-	tmp = a;
-	while (a->next != NULL)
-	{
-		tmp = a->next;
-		free(a);
-		a = tmp;
-	}
-	free(a);
-}
-
-void	free_arg(char **argv)
-{
-	int		i;
-
-	i = 0;
-	while (argv[i])
-	{
-		free(argv[i]);
-		i++;
-	}
-	free(argv[i]);
-}
-
 char	*ft_strjoin_custom(char const *s1, char const *s2)
 {
 	char	*str;
@@ -78,4 +69,18 @@ char	*ft_strjoin_custom(char const *s1, char const *s2)
 	ft_memmove(str + len1, s2, len2 + 1);
 	free((void *)s1);
 	return (str);
+}
+
+void	free_stack(t_stack *a)
+{
+	t_stack	*tmp;
+
+	tmp = a;
+	while (a->next != NULL)
+	{
+		tmp = a->next;
+		free(a);
+		a = tmp;
+	}
+	free(a);
 }

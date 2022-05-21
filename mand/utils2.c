@@ -34,6 +34,35 @@ char	*parse(int ac, char**av)
 	return (str);
 }
 
+char	**parsing_args(int ac, char **av)
+{
+	char	*tab;
+	char	*str1;
+	char	*str2;
+	char	**args;
+	int		index;
+
+	tab = ft_strtrim(av[1], " ");
+	if (!tab)
+		return (NULL);
+	str1 = ft_strjoin(tab, " ");
+	free(tab);
+	index = 2;
+	while (index < ac)
+	{
+		tab = ft_strtrim(av[index], " ");
+		str2 = ft_strjoin(str1, tab);
+		free(str1);
+		free(tab);
+		index++;
+		str1 = ft_strjoin(str2, " ");
+		free(str2);
+	}
+	args = ft_split(str1, ' ');
+	free(str1);
+	return (args);
+}
+
 void	free_stack(t_stack *a)
 {
 	t_stack	*tmp;

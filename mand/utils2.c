@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:58:55 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/21 17:31:29 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/05/31 19:38:13 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 char	*parse(int ac, char**av)
 {
 	char	*str;
+	char	*tmp;
 	int		j;
 
 	j = 2;
 	ac--;
-	str = ft_strjoin(av[1], " ");
-	while (ac--)
+	tmp = av[1];
+	str = ft_strjoin(tmp, " ");
+	while (--ac)
 	{
 		str = ft_strjoin_custom(str, av[j]);
 		if (ac == 1)
@@ -58,7 +60,7 @@ void	free_arg(char **argv)
 		free(argv[i]);
 		i++;
 	}
-	free(argv[i]);
+	free(argv);
 }
 
 char	*ft_strjoin_custom(char const *s1, char const *s2)
@@ -78,4 +80,11 @@ char	*ft_strjoin_custom(char const *s1, char const *s2)
 	ft_memmove(str + len1, s2, len2 + 1);
 	free((void *)s1);
 	return (str);
+}
+
+char	*ft_error(char **str)
+{
+	free_arg(str);
+	write(2, "Error\n", 7);
+	exit(1);
 }

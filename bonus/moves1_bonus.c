@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 21:35:12 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/21 21:35:13 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/05/25 22:20:14 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	rra_b_bonus(t_stack **head)
 
 	stack = *head;
 	if (!(stack && stack->next))
-		exit(1);
+		return ;
 	last = stack;
 	while (last->next)
 	{
@@ -66,7 +66,7 @@ void	pa_b_bonus(t_stack **reciver_head, t_stack **origin_head)
 	t_stack	*from;
 
 	if (!(*origin_head))
-		exit(0);
+		return ;
 	from = (*origin_head)->next;
 	to = *reciver_head;
 	tmp = *origin_head;

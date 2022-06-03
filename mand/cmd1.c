@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cmd1.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adaifi <adaifi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 23:03:25 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/13 15:20:04 by adaifi           ###   ########.fr       */
+/*   Updated: 2022/06/02 17:38:09 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	pa_b(t_stack **reciver_head, t_stack **origin_head)
 		*reciver_head = to;
 	}
 	else
-		ft_lstadd_front(reciver_head, *origin_head);
+		lstadd_front(reciver_head, *origin_head);
 	*origin_head = from;
 }
 

@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 00:45:37 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/21 02:14:43 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/06/03 17:13:57 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,32 @@ int	stack_len(t_stack *stack)
 	return (len);
 }
 
-void	ft_lstadd_front(t_stack **lst, t_stack *new)
+void	lstadd_back(t_stack **lst, t_stack *new)
+{
+	t_stack	*lastnode;
+
+	if (!*lst)
+		*lst = new;
+	else
+	{
+		lastnode = lstlast(*lst);
+		lastnode->next = new;
+	}
+}
+
+void	lstadd_front(t_stack **lst, t_stack *new)
 {
 	new->next = *lst;
 	*lst = new;
+}
+
+t_stack	*lstlast(t_stack *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
 
 void	swap(int *a, int *b)
@@ -39,7 +61,7 @@ void	swap(int *a, int *b)
 
 	tmp = *a;
 	*a = *b;
-	b = &tmp;
+	*b = tmp;
 }
 
 void	index_stack(t_stack *a)

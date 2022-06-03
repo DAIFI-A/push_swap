@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 21:22:03 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/21 21:26:47 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/06/02 16:48:36 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,17 @@ int	isdupl(t_stack *a)
 	return (1);
 }
 
-char	*parse(int ac, char**av)
+char	*parse_bonus(int ac, char**av)
 {
 	char	*str;
+	char	*tmp;
 	int		j;
 
 	j = 2;
 	ac--;
-	str = ft_strjoin(av[1], " ");
-	while (ac--)
+	tmp = av[1];
+	str = ft_strjoin(tmp, " ");
+	while (--ac)
 	{
 		str = ft_strjoin_custom(str, av[j]);
 		if (ac == 1)
@@ -83,4 +85,10 @@ void	free_stack(t_stack *a)
 		a = tmp;
 	}
 	free(a);
+}
+
+char	*ft_error(char **av)
+{
+	write(2, "Error\n", 7);
+	exit(1);
 }

@@ -51,58 +51,44 @@ void	sort_3(t_stack **val)
 		sort_3_rra(val);
 }
 
-void	sort_4(t_stack *a, t_stack *b)
+void	sort_4(t_stack **a, t_stack **b)
 {
 	int	min;
 
-	min = smallest_num(a);
-	if (a->num == min)
-		pb(&b, &a);
-	else if (a->next->num == min)
+	min = smallest_num(*a);
+	while (a)
 	{
-		sa(&a);
-		pb(&a, &b);
-	}
-	else if (a->next->next->num == min)
-	{
-		rra(&a);
-		rra(&a);
-		pb(&b, &a);
-	}
-	else if (args->stack_a->next->next->next->content == min)
-	{
-		rra(&a);
-		pb(&b, &a);
-	}
-	sort_3(a);
-	pa(&a, &b);
-}
-
-void	sort_5(t_stack *a, t_stack *b)
-{
-	int	i;
-	int	min;
-	int	middle;
-
-	i = 0;
-	middle = stack_len(a) / 2 + 1;
-	min = smallest_num(a);
-	while (i < 5)
-	{
-		if (a->num == min)
+		if ((*a)->next->num == min)
+			sort_3_ra(a);
+		if ((*a)->num == min)
 		{
-			pb(&b, &a);
+			pb_and_write(b, a);
 			break ;
 		}
-		else
-		{
-			if (i <= middle)
-				ra(&a);
-			else if (i > middle)
-				rra(&a);
-		}
-		i++;
+		else if ((*a)->next->num != min || (*a)->num != min)
+			sort_3_rra(a);
 	}
-	sort_4(a);
-	pa(&a, &b);
+	sort_3(a);
+	pa_and_write(a, b);
+}
+
+void	sort_five(t_stack **a, t_stack **b)
+{
+	int	min;
+
+	min = smallest_num(*a);
+	while (a)
+	{
+		if ((*a)->next->num == min)
+			sort_3_ra(a);
+		if ((*a)->num == min)
+		{
+			pb_and_write(b, a);
+			break ;
+		}
+		else if ((*a)->next->num != min ||(*a)->num != min)
+			sort_3_rra(a);
+	}
+	sort_4(a, b);
+	pa_and_write(a, b);
 }

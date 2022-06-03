@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 16:31:43 by adaifi            #+#    #+#             */
-/*   Updated: 2022/05/21 22:06:40 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/06/02 16:49:57 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,28 @@ void	stack_vald(int ac, t_stack *a, char **argv)
 {
 	char	*tab;
 	char	**str;
+	int		i;
+	int		j;
 
-	tab = parse(ac, argv);
+	i = 0;
+	j = 0;
+	tab = parse_bonus(ac, argv);
 	str = ft_split(tab, ' ');
+	over_flow(argv);
+	while (str[j])
+		j++;
+	while (i < j - 1)
+	{
+		if (str[i++] == '\0')
+			ft_error(argv);
+	}
 	if ((isdupl(a) == 0) || !(is_digit(str)))
 	{
 		write(2, "Error\n", 7);
 		free_stack(a);
 		exit(1);
 	}
+	free(tab);
 }
 
 int	main(int ac, char **argv)
@@ -71,16 +84,10 @@ int	main(int ac, char **argv)
 	t_stack	*a;
 	t_stack	*b;
 
-	b = NULL;
 	if (ac == 1)
-		exit(0);
-	if (ac == 2)
-	{
-		check(a, b);
-		write(1, "OK\n", 4);
-		exit(0);
-	}
-	a = stack_fillin(ac, argv);
+		exit(1);
+	a = stack_fillin_bonus(ac, argv);
+	b = NULL;
 	stack_vald(ac, a, argv);
 	check(a, b);
 	if ((is_sorted(a) == 1 && b == NULL))

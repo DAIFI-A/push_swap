@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 16:31:43 by adaifi            #+#    #+#             */
-/*   Updated: 2022/06/02 16:49:57 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/06/05 01:56:37 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,19 +63,12 @@ void	stack_vald(int ac, t_stack *a, char **argv)
 	tab = parse_bonus(ac, argv);
 	str = ft_split(tab, ' ');
 	over_flow(argv);
-	while (str[j])
-		j++;
-	while (i < j - 1)
-	{
-		if (str[i++] == '\0')
-			ft_error(argv);
-	}
 	if ((isdupl(a) == 0) || !(is_digit(str)))
 	{
-		write(2, "Error\n", 7);
 		free_stack(a);
-		exit(1);
+		ft_error(argv);
 	}
+	free_arg_bonus(str);
 	free(tab);
 }
 
@@ -83,16 +76,17 @@ int	main(int ac, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
+	int		i = 0;
 
 	if (ac == 1)
-		exit(1);
+		exit(0);
 	a = stack_fillin_bonus(ac, argv);
 	b = NULL;
 	stack_vald(ac, a, argv);
 	check(a, b);
 	if ((is_sorted(a) == 1 && b == NULL))
 		write(1, "OK\n", 4);
-	else if (is_sorted(a) == 0 && b == NULL)
+	else
 		write(1, "KO\n", 4);
 	free_stack(a);
 	b = NULL;

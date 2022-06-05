@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 21:29:31 by adaifi            #+#    #+#             */
-/*   Updated: 2022/06/02 19:51:11 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/06/05 02:03:26 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	is_digit(char	**av)
 	{
 		j = 1;
 		while (((av[i][0] != '-' && av[i][0] != '+') || av[i][1] == '\0')
-			&& (ft_isdigit(av[i][0]) == 0 ))
+			&& (ft_isdigit(av[i][0]) == 0))
 			return (0);
 		while (av[i][j])
 		{
@@ -64,13 +64,20 @@ void	over_flow(char **av)
 
 int	is_sorted(t_stack *a)
 {
+	t_stack	*back;
+
 	while (a->next != NULL)
 	{
-		if (a->num > a->next->num)
-			return (0);
+		back = a;
+		while (back->next != NULL)
+		{
+			if (a->num < back->next->num)
+				return (1);
+			back = back->next;
+		}
 		a = a->next;
 	}
-	return (1);
+	return (0);
 }
 
 int	swap(int *a, int *b)
@@ -79,12 +86,6 @@ int	swap(int *a, int *b)
 
 	tmp = *a;
 	*a = *b;
-	b = &tmp;
+	*b = tmp;
 	return (0);
-}
-
-void	ft_lstadd_front(t_stack **lst, t_stack *new)
-{
-	new->next = *lst;
-	*lst = new;
 }

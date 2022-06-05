@@ -86,7 +86,7 @@ void	sort_five(t_stack **a, t_stack **b)
 			pb_and_write(b, a);
 			break ;
 		}
-		else if ((*a)->next->num != min ||(*a)->num != min)
+		else if ((*a)->next->num != min || (*a)->num != min)
 			sort_3_rra(a);
 	}
 	sort_4(a, b);

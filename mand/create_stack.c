@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 23:01:38 by adaifi            #+#    #+#             */
-/*   Updated: 2022/06/03 17:39:29 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/06/04 15:05:07 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ t_stack	*stack_fillin(int argc, char **argv)
 		i++;
 	}
 	free(str);
+	free_arg(argv);
 	return (head);
 }
 

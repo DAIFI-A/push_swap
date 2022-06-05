@@ -8,6 +8,7 @@ SRCS = 	big_sort.c\
  		sort_five.c\
  		utils1.c\
  		utils2.c\
+		utils3.c\
 
 BONUS = checker.c\
 		ft_strncmp.c\
@@ -16,6 +17,7 @@ BONUS = checker.c\
 		stack.c\
 		utils_bonus.c\
 		utils2_bonus.c\
+		utils3_bonus.c\
 
 BODIR = bonus
 SRCDIR = mand
@@ -25,7 +27,7 @@ CC = clang
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
 BONAME = checker
-LIB = libft.a
+LIB = libft/libft.a
 OBJS := $(SRCS:%.c=$(OBJS_DIR)/%.o)
 BO := $(BONUS:%.c=$(OBJS_BON)/%.o)
 
@@ -47,14 +49,19 @@ $(OBJS_BON)/%.o: $(BODIR)/%.c | $(OBJS_BON)
 bonus : ${BO} ${LIB}
 	@${CC} ${CFLAGS} $^ -o $(BONAME) $(LIB)
 
-$(NAME): $(OBJS)
+$(NAME): $(LIB) $(OBJS)
 			$(CC) $(CFLAGS) $^ -o $(NAME) $(LIB)
+
+$(LIB) :
+		make -C libft
 
 clean:
 			@rm -rf $(OBJS_DIR) ${OBJS_BON}
+			make clean -C libft
 
 fclean:	clean
 			@rm -rf  $(NAME)  ${BONAME}
+			make fclean -C libft
 
 re: fclean all
 

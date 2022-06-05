@@ -6,7 +6,7 @@
 /*   By: adaifi <adaifi@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 17:29:52 by adaifi            #+#    #+#             */
-/*   Updated: 2022/06/03 17:46:51 by adaifi           ###   ########lyon.fr   */
+/*   Updated: 2022/06/05 00:53:56 by adaifi           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,17 @@ int	is_digit(char	**av)
 
 int	is_sorted(t_stack *a)
 {
-	while (a->next != NULL)
+	t_stack	*back;
+
+	while (a)
 	{
-		if (a->num > a->next->num)
-			return (0);
+		back = a;
+		while (back)
+		{
+			if (a->num > back->next->num)
+				return (0);
+			back = back->next;
+		}
 		a = a->next;
 	}
 	return (1);
@@ -85,10 +92,7 @@ void	over_flow(char **av)
 				n++;
 			}
 			if (n > 10)
-			{
-				ft_putendl_fd("Error", 2);
-				exit(1);
-			}
+				ft_error(av);
 		}
 		i++;
 	}
@@ -106,13 +110,6 @@ void	ckeck_stack(int ac, char **av, t_stack *a)
 	tab = parse(ac, av);
 	str = ft_split(tab, ' ');
 	over_flow(av);
-	while (str[j])
-		j++;
-	while (str[i])
-	{
-		if (str[i++] == '\0')
-			ft_error(str);
-	}
 	if ((isdupl(a) == 0) || !(is_digit(str)))
 	{
 		ft_error(str);

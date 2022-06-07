@@ -1,0 +1,551 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+ 
+
+# Make data base, printed on Tue Jun  7 23:24:28 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/adaifi/Desktop/Push_Swap
+# makefile
+SHELL = /bin/sh
+# makefile (from `Makefile', line 32)
+BO := objbon//checker.o objbon//ft_strncmp.o objbon//moves1_bonus.o objbon//moves2_bonus.o objbon//stack.o objbon//utils_bonus.o objbon//utils2_bonus.o objbon//utils3_bonus.o
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 27)
+CFLAGS = -Wall -Wextra -Werror
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# makefile (from `Makefile', line 13)
+BONUS = checker.c ft_strncmp.c moves1_bonus.c moves2_bonus.c stack.c utils_bonus.c utils2_bonus.c utils3_bonus.c 
+# makefile (from `Makefile', line 31)
+OBJS := objs//big_sort.o objs//check_arg.o objs//cmd_write.o objs//cmd.o objs//cmd1_write.o objs//cmd1.o objs//create_stack.o objs//sort_five.o objs//utils1.o objs//utils2.o objs//utils3.o
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cc8w003327/T/vscode-ipc-a540d196-02d2-44aa-8c79-2142fc1a6733.sock
+# environment
+VSCODE_CWD = /
+# environment
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
+# makefile (from `Makefile', line 25)
+OBJS_BON = objbon/
+# environment
+VSCODE_LOG_STACK = false
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# makefile (from `Makefile', line 30)
+LIB = libft/libft.a
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.IM8mOShVdM/Listeners
+# makefile (from `Makefile', line 23)
+SRCDIR = mand
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /Users/adaifi/Desktop/Push_Swap
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# makefile (from `Makefile', line 29)
+BONAME = checker
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/adaifi
+# default
+MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/adaifi/Library/Application Support/Code/CachedData/57fd6d0195bb9b9d1b49f6da5db789060795de47
+# environment
+LOGNAME = adaifi
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+XPC_FLAGS = 0x0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# makefile (from `Makefile', line 1)
+SRCS = big_sort.c check_arg.c cmd_write.c cmd.c cmd1_write.c cmd1.c create_stack.c sort_five.c utils1.c utils2.c utils3.c 
+# environment
+SHLVL = 1
+# makefile (from `Makefile', line 26)
+CC = clang
+# makefile (from `Makefile', line 22)
+BODIR = bonus
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = adaifi
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from `Makefile', line 28)
+NAME = push_swap
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n000cc8w003327/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/adaifi/Library/Application Support/Code/1.67.0-main.sock
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+XPC_SERVICE_NAME = com.microsoft.VSCode.1092
+# makefile (from `Makefile', line 24)
+OBJS_DIR = objs/
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+__CF_USER_TEXT_ENCODING = 0x18C47:0x0:0x0
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+LC_ALL = C
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 0
+# environment
+LANG = C
+# environment
+VSCODE_PID = 16163
+# variable set hash-table stats:
+# Load=73/1024=7%, Rehash=0, Collisions=4/120=3%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# mand (device 16777220, inode 537478): 14 files, no impossibilities so far.
+# . (device 16777220, inode 537318): 15 files, no impossibilities.
+# objs (device 16777220, inode 539760): No files, no impossibilities so far.
+
+# 29 files, no impossibilities in 3 directories.
+
+# Implicit Rules
+
+objs//%.o: mand/%.c | objs/
+#  commands to execute (from `Makefile', line 44):
+	$(CC) -c $< -o $@
+	
+
+objbon//%.o: bonus/%.c | objbon/
+#  commands to execute (from `Makefile', line 47):
+	$(CC) -c $< -o $@
+	
+
+# 2 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+# Not a target:
+mand/cmd1.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-07 22:57:58
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+objs//cmd_write.o: mand/cmd_write.c | objs/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `cmd_write'
+#  Last modified 2022-06-07 23:02:30
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 44):
+	$(CC) -c $< -o $@
+	
+
+# Not a target:
+mand/cmd_write.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-07 22:57:58
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+objbon//stack.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: push_swap
+#  Phony target (prerequisite of .PHONY).
+#  Command-line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+ 
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/3=0%
+
+.PHONY: clean re fclean all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objs//sort_five.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+objs//cmd1_write.o: mand/cmd1_write.c | objs/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `cmd1_write'
+#  Last modified 2022-06-07 23:02:30
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 44):
+	$(CC) -c $< -o $@
+	
+
+# Not a target:
+mand/cmd1_write.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-07 22:57:58
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objbon//utils2_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-07 22:57:58
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+objs/:
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-07 23:20:14
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 38):
+	@mkdir $@
+	
+
+# Not a target:
+objbon//moves1_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+objs//check_arg.o: mand/check_arg.c | objs/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `check_arg'
+#  Last modified 2022-06-07 23:02:30
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 44):
+	$(CC) -c $< -o $@
+	
+
+# Not a target:
+mand/check_arg.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-07 23:02:18
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+objs//utils3.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+objs//cmd.o: mand/cmd.c | objs/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `cmd'
+#  Last modified 2022-06-07 23:02:30
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 44):
+	$(CC) -c $< -o $@
+	
+
+libft/libft.a:
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-07 22:57:58
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 56):
+	make -C libft
+	
+
+# Not a target:
+objbon//ft_strncmp.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+mand/cmd.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-07 22:57:58
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+bonus: objbon//checker.o objbon//ft_strncmp.o objbon//moves1_bonus.o objbon//moves2_bonus.o objbon//stack.o objbon//utils_bonus.o objbon//utils2_bonus.o objbon//utils3_bonus.o libft/libft.a
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 50):
+	@${CC} ${CFLAGS} $^ -o $(BONAME) $(LIB)
+	
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 63):
+	@rm -rf  $(NAME)  ${BONAME}
+	make fclean -C libft
+	
+
+# Not a target:
+objbon//moves2_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+objs//create_stack.o: mand/create_stack.c | objs/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `create_stack'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := objs//create_stack.o
+# automatic
+# % := 
+# automatic
+# * := create_stack
+# automatic
+# + := mand/create_stack.c
+# automatic
+# | := objs/
+# automatic
+# < := mand/create_stack.c
+# automatic
+# ^ := mand/create_stack.c
+# automatic
+# ? := mand/create_stack.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/13=8%
+#  commands to execute (from `Makefile', line 44):
+	$(CC) -c $< -o $@
+	
+
+# Not a target:
+mand/create_stack.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-07 23:20:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+ 
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+objs//big_sort.o: mand/big_sort.c | objs/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `big_sort'
+#  Last modified 2022-06-07 23:02:30
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 44):
+	$(CC) -c $< -o $@
+	
+
+# Not a target:
+mand/big_sort.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-07 22:57:58
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 59):
+	@rm -rf $(OBJS_DIR) ${OBJS_BON}
+	make clean -C libft
+	
+
+push_swap: libft/libft.a objs//big_sort.o objs//check_arg.o objs//cmd_write.o objs//cmd.o objs//cmd1_write.o objs//cmd1.o objs//create_stack.o objs//sort_five.o objs//utils1.o objs//utils2.o objs//utils3.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-07 23:12:13
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/3=0%
+#  commands to execute (from `Makefile', line 53):
+	$(CC) $(CFLAGS) $^ -o $(NAME) $(LIB)
+	
+
+# Not a target:
+objs//utils1.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+objs//cmd1.o: mand/cmd1.c | objs/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `cmd1'
+#  Last modified 2022-06-07 23:02:30
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 44):
+	$(CC) -c $< -o $@
+	
+
+# Not a target:
+objbon//utils_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objbon//checker.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+objbon/:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 41):
+	@mkdir $@
+	
+
+# Not a target:
+objs//utils2.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+objbon//utils3_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=39/1024=4%, Rehash=0, Collisions=7/116=6%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Tue Jun  7 23:24:28 2022
+
+ 

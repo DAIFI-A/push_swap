@@ -1,0 +1,19 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/adaifi/Desktop/Push_Swap'
+make -C libft
+mkdir objs/
+clang -c mand/big_sort.c -o objs//big_sort.o
+clang -c mand/check_arg.c -o objs//check_arg.o
+clang -c mand/cmd_write.c -o objs//cmd_write.o
+clang -c mand/cmd.c -o objs//cmd.o
+clang -c mand/cmd1_write.c -o objs//cmd1_write.o
+clang -c mand/cmd1.c -o objs//cmd1.o
+clang -c mand/create_stack.c -o objs//create_stack.o
+clang -c mand/sort_five.c -o objs//sort_five.o
+clang -c mand/utils1.c -o objs//utils1.o
+clang -c mand/utils2.c -o objs//utils2.o
+clang -c mand/utils3.c -o objs//utils3.o
+clang -Wall -Wextra -Werror libft/libft.a objs//big_sort.o objs//check_arg.o objs//cmd_write.o objs//cmd.o objs//cmd1_write.o objs//cmd1.o objs//create_stack.o objs//sort_five.o objs//utils1.o objs//utils2.o objs//utils3.o -o push_swap libft/libft.a
+ 
+make: Leaving directory `/Users/adaifi/Desktop/Push_Swap'
+ 

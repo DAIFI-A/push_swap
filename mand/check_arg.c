@@ -57,16 +57,12 @@ int	is_sorted(t_stack *a)
 {
 	t_stack	*back;
 
-	while (a)
+	back = a;
+	while (back->next)
 	{
-		back = a;
-		while (back)
-		{
-			if (a->num > back->next->num)
-				return (0);
-			back = back->next;
-		}
-		a = a->next;
+		if (back->num > back->next->num)
+			return (0);
+		back = back->next;
 	}
 	return (1);
 }
@@ -116,7 +112,7 @@ void	ckeck_stack(int ac, char **av, t_stack *a)
 		free_stack(a);
 		exit(1);
 	}
-	if (is_sorted(a) == 1)
+	if (is_sorted(a))
 	{
 		free_arg(str);
 		free_stack(a);

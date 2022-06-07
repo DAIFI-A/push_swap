@@ -84,7 +84,6 @@ char	*ft_strjoin_custom(char const *s1, char const *s2)
 
 char	*ft_error(char **str)
 {
-	free_arg(str);
 	write(2, "Error\n", 7);
 	exit(1);
 }

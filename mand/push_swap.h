@@ -68,6 +68,7 @@ char	*parse(int ac, char**av);
 char	*ft_error(char **av);
 void	lstadd_back(t_stack **lst, t_stack *new);
 t_stack	*lstlast(t_stack *lst);
-t_stack	*creat_node(int data);
+t_stack	*creat_node(void);
 t_stack	*stack_fillin(int argc, char **argv);
+void	push_swap(int argc, char **argv, t_stack *a, t_stack *b);
 #endif

@@ -38,7 +38,7 @@ char	*parse_bonus(int ac, char**av);
 char	*ft_strjoin_custom(char const *s1, char const *s2);
 void	stack_vald(int ac, t_stack *a, char **argv);
 t_stack	*stack_fillin_bonus(int argc, char **argv);
-t_stack	*creat_node_bonus(int data);
+t_stack	*creat_node_bonus(void);
 int		is_sorted(t_stack *a);
 int		ft_atoi(const char *str);
 void	sa_b_bonus(t_stack **head);

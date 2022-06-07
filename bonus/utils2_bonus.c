@@ -66,18 +66,14 @@ int	is_sorted(t_stack *a)
 {
 	t_stack	*back;
 
-	while (a->next != NULL)
+	back = a;
+	while (back->next)
 	{
-		back = a;
-		while (back->next != NULL)
-		{
-			if (a->num < back->next->num)
-				return (1);
-			back = back->next;
-		}
-		a = a->next;
+		if (back->num > back->next->num)
+			return (0);
+		back = back->next;
 	}
-	return (0);
+	return (1);
 }
 
 int	swap(int *a, int *b)
